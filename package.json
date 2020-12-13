@@ -1,0 +1,31 @@
+{
+  "name": "@studiobear/replogger",
+  "version": "0.1.0",
+  "description": "Lightweight Styled Console Logging",
+  "source": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "unpkg": "dist/index.umd.js",
+  "files":["dist", "package.json", "README.md", "LICENSE"],
+   "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Studiobear/replogger.git"
+  },
+  "keywords": [
+    "javascript",
+    "logging"
+  ],
+  "author": "Barry Low <barry@studiobear.co>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Studiobear/replogger/issues"
+  },
+  "homepage": "https://github.com/Studiobear/replogger#readme",
+  "devDependencies": {
+    "microbundle": "^0.12.4"
+  }
+}
