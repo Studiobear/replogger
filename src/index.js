@@ -33,22 +33,60 @@ const BgCyan = "46m"
 const BgWhite = "47m"
 
 const styledLog = (m, c) => console.log(`${c}%s${Reset}`, m)
+const styledWrap = (m,c) => `${c}m${Reset}`
 
 const replogger = () => 
 {
   const defaults = {
     info: Green,
     note: Cyan,
+    warn: Yellow,
     error: Red,
     hl: `${Df}${BgYellow}`
   }
+  const styles ={
+    bold: Bold,
+    ul: Ul,
+    blink: Blink
+  }
+  const colors = {
+    black: Black,
+    white: White,
+    red: Red,
+    yellow: Yellow,
+    green: Green,
+    blue: Blue,
+    magenta: Magenta,
+    cyan: Cyan
+  }
+  const bgs = {
+    black: BgBlack,
+    white: BgWhite,
+    red: BgRed,
+    yellow: BgYellow,
+    green: BgGreen,
+    blue: BgBlue,
+    magenta: BgMagenta,
+    cyan: BgCyan
+  }
+  const util = {
+    esc: ESC,
+    reset: Reset,
+    default: Df
+  }
   return {
+    log: m => console.log(m),
     info: (m, c = defaults.info) => styledLog(m,c),
     note: (m, c = defaults.note) => styledLog(m,c),
     error: (m, c = defaults.error) => styledLog(m,c),
     hl: (m, c = defaults.hl) => styledLog(m,c),
+    wrap: (m, c = defaults.hl) => styledWrap(m,c),
     getDefaults: () => defaults,
-    setDefaults: c => Object.assign(defaults, c)
+    setDefaults: c => Object.assign(defaults, c),
+    styles,
+    colors,
+    bgs,
+    util
   }
 }
 
